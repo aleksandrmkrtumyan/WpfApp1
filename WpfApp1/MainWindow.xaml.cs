@@ -82,6 +82,8 @@ public partial class MainWindow : Window
         if(numberInText.Length > 4)
         {
             result = "Ծրագիրը դեո չի աշխատում 9999 թվից մեծ թվերի հետ";
+            MessageBox.Show(result);
+            return;
         }
         if(!numberInText.All(char.IsDigit))
         {
@@ -89,7 +91,7 @@ public partial class MainWindow : Window
             MessageBox.Show(result);
             return;
         }
-        if(numberInText.All(n => n == '0'))
+        if(numberInText != "0" && numberInText.All(n => n == '0'))
         {
             result = "Այս տարբերակը ևս ստուգվում է :)";
             MessageBox.Show(result);
